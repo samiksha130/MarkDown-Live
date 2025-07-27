@@ -1,0 +1,303 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  /* overflow-x: auto; */
+  /* Allows horizontal scrolling */
+}
+
+/* html {
+  overflow-x: auto;
+} */
+
+.preview-content {
+  padding: 10px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  height: 85vh;
+  overflow-y: auto;
+}
+
+.cm-editor {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  
+}
+
+.cm-strong {
+  font-weight: bold;
+}
+
+.cm-emphasis {
+  font-style: italic;
+}
+
+.cm-header {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.preview-content h1 {
+  font-size: 2rem;
+  color: #333;
+}
+
+.preview-content table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.preview-content table,
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.markdown-preview div {
+  text-align: inherit;
+  /* ✅ Allow parent div to control text alignment */
+}
+
+/* Remove underline from Markdown headers */
+.table-responsive h1,
+.table-responsive h2,
+.table-responsive h3,
+.table-responsive h4,
+.table-responsive h5,
+.table-responsive h6,
+.table-responsive p,
+.table-responsive ul,
+.table-responsive ol {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  display: block;
+  margin-bottom: 10px;
+  /* ✅ Ensure proper spacing */
+  position: relative;
+}
+
+.md-blockquote {
+  border-left: 4px solid #b2abab;
+  padding: 10px;
+  margin: 10px 0;
+  background: #f9f9f9;
+  font-style: italic;
+}
+
+.table-responsive pre {
+  white-space: pre-wrap;
+  /* ✅ Ensure multiline code formatting */
+  background-color: #f4f4f4;
+  padding: 10px;
+  border-radius: 5px;
+}
+.delete-btn {
+  background-color: #2d2d2d; /* Red color */
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  position: absolute;
+  right: 10px; /* Move button to the right corner */
+  transition: all 0.3s ease-in-out;
+}
+
+.delete-btn:hover {
+  background-color: #cc0000; /* Darker red */
+  transform: scale(1.1); /* Slight pop effect */
+}
+
+.delete-btn:active {
+  transform: scale(1); /* Reset scale on click */
+  opacity: 0.8;
+}
+@media print {
+  body {
+    font-family: Arial, sans-serif;
+  }
+
+  /* h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    page-break-before: always;
+  } */
+
+  pre,
+  code {
+    background: #f4f4f4;
+    white-space: pre-wrap;
+    font-size: 12px;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th,
+  td {
+    border: 1px solid black;
+    padding: 8px;
+  }
+
+  /* Ensure proper page breaks */
+  .page-break {
+    page-break-before: always;
+    break-before: always;
+    margin-top: 20px;
+  }
+
+  /* Ensure each heading starts on a new page if needed */
+  .page-break-before {
+    page-break-before: always;
+    break-before: always;
+  }
+
+  /* Prevent tables and code blocks from splitting across pages */
+  table,
+  pre,
+  blockquote {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Prevent important elements from being split between pages */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  blockquote,
+  table,
+  pre,
+  ul,
+  ol,
+  li,
+  code {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Ensure lists and paragraphs don’t break awkwardly */
+  ul,
+  ol {
+    padding-left: 20px;
+  }
+
+  /* Prevent footnotes and small text from breaking */
+  .footnote,
+  .subscript,
+  .superscript {
+    page-break-inside: avoid;
+  }
+
+  /* ✅ Prevent headings from breaking across pages */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    page-break-before: auto;
+    /* Allow heading to fit where possible */
+    page-break-after: avoid;
+    /* Prevent content splitting */
+    break-inside: avoid;
+    margin-top: 20px;
+  }
+
+  /* ✅ Ensure heading stays with next content block */
+  h1+p,
+  h2+p,
+  h3+p,
+  h4+p,
+  h5+p,
+  h6+p,
+  h1+ul,
+  h2+ul,
+  h3+ul,
+  h4+ul,
+  h5+ul,
+  h6+ul,
+  h1+table,
+  h2+table,
+  h3+table,
+  h4+table,
+  h5+table,
+  h6+table {
+    page-break-before: avoid;
+  }
+}
+
+/* Navbar ko sticky banane ke liye */
+.navbar-title {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: #222; /* Navbar ka background */
+  z-index: 1000; /* Editor ke upar dikhne ke liye */
+}
+
+/* Toolbar (buttons wali line) bhi sticky honi chahiye */
+.navbar-toolbar {
+  position: sticky;
+  top: 55px; /* Navbar ke niche fix rakhne ke liye */
+  width: 100%;
+  background: #333; /* Toolbar ka background */
+  z-index: 999; /* Navbar se neeche but editor se upar */
+  display: flex;
+  flex-wrap: wrap; /* 🟢 Ensure wrapping is enabled */
+  justify-content: flex-start;
+  gap: 5px;
+  padding: 5px;
+}
+/* Buttons ka section */
+/* Dropdown menus (File, Edit, View, Tools) */
+nav {
+  display: flex;
+  gap: 10px;
+}
+.toolbar-buttons {
+  display: flex;
+  flex-wrap: wrap; /* ✅ Only wrap within this section */
+  justify-content: flex-start;
+  gap: 5px;
+  
+}
+.dropdown-menu {
+    position: absolute;
+    top: 100%; /* Button ke neeche aaye */
+    left: 0;
+    background: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1100; /* Navbar ke upar dikhne ke liye */
+}
+
+/* Dropdown menu jab active ho tab dikhaye */
+.dropdown-menu.show {
+    display: block;
+}
+
+
+

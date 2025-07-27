@@ -1,0 +1,157 @@
+/* .side-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    overflow-y: auto;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .side-panel h3 {
+    margin-top: 0;
+  }
+  
+  .close-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .side-panel ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .side-panel li {
+    padding: 8px;
+    cursor: pointer;
+  }
+  
+  .side-panel li:hover {
+    background-color: lightgray;
+  }
+   */
+
+
+/* 📌 Side Panel */
+.side-panel {
+  position: fixed;
+  top: 56px; /* Adjust based on navbar height */
+  right: 0;
+  width: 260px;
+  height: calc(100% - 115px);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px); /* Glassmorphism effect */
+  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px 5px;
+  max-height: 100vh; /* Make sure it fits within the viewport */
+  overflow-y: auto; /* Enable scrolling */
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+  /* border-left: 3px solid #ddd; */
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+/* 📌 Fixed Panel Header (Title + Close Button) */
+.side-panel-header {
+  position: sticky;
+  top: -20px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 15px 20px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #333;
+  border-bottom: 2px solid #e0e0e0;
+  z-index: 100;
+  font-family: 'Poppins', sans-serif;
+  height: 60px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  display: flex; /* Flexbox for alignment */
+  align-items: center;
+  justify-content: space-between; /* Push close button to the right */
+}
+h3{
+  font-size: 25px;
+  font-weight: 700;
+  color: #333;
+}
+
+/* 📌 Close Button */
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #555;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #e74c3c;
+}
+
+/* 📌 List Styling */
+.side-panel ul {
+  list-style: none;
+  padding: 10px 15px;
+  margin: 0;
+}
+
+/* 📌 File List Items */
+.side-panel li {
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #444;
+  background: rgba(255, 255, 255, 0.6);
+  margin-bottom: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+}
+
+/* 📌 Hover Effect */
+.side-panel li:hover {
+  background: linear-gradient(135deg, #616060, #b6b5b5);
+  color: white;
+  transform: translateX(-3px);
+}
+/* 📌 Search Bar Styling */
+.search-input {
+  width: 100%;
+  padding: 7px 15px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+  font-family: 'Poppins', sans-serif;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(5px);
+  color: #333;
+}
+
+/* 📌 Focus Effect */
+.search-input:focus {
+  border-color: #007bff;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.2);
+}
+
+
+
+

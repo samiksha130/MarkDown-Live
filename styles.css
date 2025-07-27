@@ -1,0 +1,88 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Header */
+header {
+    background-color: #6200ea;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Main Container */
+main {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+.editor, .preview {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.editor {
+    background-color: #fff;
+    border-right: 1px solid #ddd;
+}
+
+.preview {
+    background-color: #fafafa;
+}
+
+/* Textarea Styles */
+textarea {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    resize: none;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* Markdown Rendered Output */
+.preview h1 {
+    color: #6200ea;
+    font-size: 28px;
+}
+
+.preview h2 {
+    color: #37474f;
+    font-size: 24px;
+}
+
+.preview p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.preview pre {
+    background-color: #e8f5e9;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    overflow-x: auto;
+}
+
+.preview a {
+    color: #1e88e5;
+    text-decoration: none;
+}
